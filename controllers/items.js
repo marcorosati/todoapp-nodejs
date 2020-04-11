@@ -18,6 +18,7 @@ exports.context = function(server, path, itemsModel) {
 };
 
 exports.list = function(req, res, next) {
+console.log('test');
     var page_no = req.query.page || 1;
     var sortField = req.query.sortFields || "id";
     var sortDirection = req.query.sortDirections || "asc";
@@ -59,6 +60,7 @@ exports.list = function(req, res, next) {
 };
 
 exports.read = function(req, res, next) {
+console.log('test');
     var key = req.params.id;
     model.read(key, function(err, item) {
         if (err) {
@@ -78,6 +80,7 @@ exports.read = function(req, res, next) {
 
 
 exports.save = function(req, res, next) {
+console.log('test');
     if (req.params.id) {
         model.update(req.params.id, req.params.description, req.params.done, function(err, item) {
             if (err) {
@@ -104,6 +107,7 @@ exports.save = function(req, res, next) {
 
 
 exports.destroy = function(req, res, next) {
+console.log('test');
     if (req.params.id) {
         model.destroy(req.params.id, function(err, item) {
             if (err) {

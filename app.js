@@ -13,7 +13,7 @@ var server = restify.createServer();
     
 controller.context(server, '/todo/api', model);
 
-server.get('/public/*', restify.plugins.serveStatic({
+server.get('/\/todo\/?.*/', restify.plugins.serveStatic({
     directory: __dirname,
     default: 'index.html'
 }));
